@@ -1,12 +1,12 @@
 /*
-  Using the [device name]
+  Jig testing the BNO080
   By: Nathan Seidle
   SparkFun Electronics
   Date: December 21st, 2017
   License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
 
   Feel like supporting our work? Buy a board from SparkFun!
-  https://www.sparkfun.com/products/[product ID]
+  https://www.sparkfun.com/products/14586
 
   Hardware Connections:
   Attach the Qwiic Shield to your Arduino/Photon/ESP32 or other
@@ -33,17 +33,15 @@
 */
 
 #include <Wire.h>
+
 #include <SoftwareSerial.h>
 SoftwareSerial mySerial(A4, A5); // RX, TX
+//SoftwareSerial mySerial(12, 13); //?
+
 #include <SPI.h>
 
-byte deviceAddress = 0x4B; //0x4A if you close the jumper
-
-byte shtpHeader[4]; //Each packet has a header of 4 bytes
-
-#define MAX_PACKET_SIZE 512
-byte shtpData[MAX_PACKET_SIZE]; //Packets can be up to 32k but we don't have that much RAM.
-int dataSpot = 0;
+#include "SparkFun_BNO080_Arduino_Library.h"
+BNO080 myIMU;
 
 //Test jig pinouts
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -61,13 +59,19 @@ const byte TEST_BUTTON = A0;
 const byte TEST_LED = A1;
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+boolean testI2CA = false;
+boolean testI2CB = false;
+boolean testSPI = false;
+boolean testUART = false;
+boolean testINT = false;
+
 void setup()
 {
   pinMode(PS0_WAKE, OUTPUT);
   pinMode(PS1, OUTPUT);
   pinMode(INT, INPUT_PULLUP);
   pinMode(RST, OUTPUT);
-  
+
   pinMode(SPI_CS, INPUT); //High impedance for now
   pinMode(ADR_MOSI, OUTPUT);
   pinMode(SPI_MISO, INPUT); //High impedance for now
@@ -83,98 +87,124 @@ void setup()
 
 void loop()
 {
-  boolean testI2CA = false;
-  boolean testI2CB = false;
-  boolean testSPI = false;
-  boolean testUART = false;
-  boolean testINT = false;
-  
+
   //Test I2C
   //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-  digitalWrite(ADR_MOSI, LOW); //Set I2C address to 0x4A
-  deviceAddress = 0x4A;
-
-  setMode(0b00); //Reset IC and set mode to I2C
-
   Wire.begin();
-
-  //The BNO080 comes out of reset with 3 init packet announcements. Look for one.
-  if (receivePacket() == true)
-    testI2CA = true;
-
   digitalWrite(ADR_MOSI, HIGH); //Set I2C address to 0x4B
-  deviceAddress = 0x4B;
-
   setMode(0b00); //Reset IC and set mode to I2C
-
-  //The BNO080 comes out of reset with 3 init packet announcements. Look for one.
-  if (receivePacket() == true)
+  myIMU.begin(0x4B, Wire);
+  if (myIMU.receivePacket() == true) //The BNO080 comes out of reset with 3 init packet announcements. Look for one.
+  {
+    Serial.println("I2CB good!");
     testI2CB = true;
+  }
+
+  digitalWrite(ADR_MOSI, LOW); //Set I2C address to 0x4A
+  setMode(0b00); //Reset IC and set mode to I2C
+  myIMU.begin(0x4A, Wire);
+  if (myIMU.receivePacket() == true) //The BNO080 comes out of reset with 3 init packet announcements. Look for one.
+  {
+    Serial.println("I2CA good!");
+    testI2CA = true;
+  }
 
   if (digitalRead(INT) == LOW) //Sensor is trying to tell us data is available
+  {
     testINT = true;
-    
+  }
+
+  Wire.end();
+  digitalWrite(A4, LOW);
+  digitalWrite(A5, LOW);
+  pinMode(A4, INPUT); //Release I2C line because they are also connected to SPI/UART lines
+  pinMode(A5, INPUT);
+
   //Test UART
   //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+  delay(1);
+
   mySerial.begin(115200);
 
   setMode(0b01); //Reset IC and set mode to UART-RVC
 
-  //As unit comes out of reset it transmits:
-  //%Hillcrest Labs 10003608
-  //%SW Ver 3.2.x
-  //%(c) 2017 Hillcrest Laboratories, Inc.
+  //We can't correctly read the data (it's corrupt at 115200 with software serial)
+  //but we can see a volume of it
 
-  //Look for %Hillcrest
-  if(mySerial.available())
+  //Look for 10 characters in 250ms
+  int dataCount = 0;
+  int counter = 0;
+  while (counter < 200)
   {
-    if(mySerial.read() == '%')
+    if (mySerial.available())
     {
-      if(mySerial.read() == 'H')
-        //Good enough for me
-        testUART = true;
+      byte incoming = mySerial.read();
+
+      if (incoming != 0x00 && incoming != 0xFF) dataCount++;
+
+      if (dataCount > 20) break;
     }
+    counter++;
+    delay(1);
   }
+
+  if (dataCount < 20)
+  {
+    Serial.println("Serial FAIL");
+  }
+  else
+  {
+    Serial.println("Serial good!");
+    testUART = true; //Good enough for me
+  }
+
+  mySerial.end();
 
   //Test SPI
   //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   pinMode(SPI_CS, OUTPUT);
-  
+  pinMode(ADR_MOSI, OUTPUT);
+  pinMode(SPI_MISO, INPUT);
+  pinMode(SPI_SCK, OUTPUT);
+
   SPI.begin();
 
   setMode(0b11); //Reset IC and set mode to SPI
 
   //The BNO080 comes out of reset with 3 init packet announcements. Look for one.
   if (receivePacketSPI() == true)
-    testSPI = true;
-
-
-  if(testI2CA == true && testI2CB == true) 
   {
-    if(testUART == true)
+    Serial.println("SPI good!");
+    testSPI = true;
+  }
+
+  if (testI2CA == true && testI2CB == true)
+  {
+    if (testUART == true)
     {
-      if(testSPI == true)
+      if (testSPI == true)
       {
-        if(testINT == true)
+        if (testINT == true)
         {
           Serial.println("Board is good!");
         }
       }
     }
   }
-  
-  if(testI2CA == false) 
+
+  if (testI2CA == false)
     Serial.println("I2CA fail");
-  if(testI2CB == false) 
+  if (testI2CB == false)
     Serial.println("I2CB fail");
-  if(testUART == false) 
+  if (testUART == false)
     Serial.println("UART fail");
-  if(testSPI == false) 
+  if (testSPI == false)
     Serial.println("SPI fail");
-  if(testINT == false) 
+  if (testINT == false)
     Serial.println("INT fail");
 
-    while(1);
+  while (1);
 }
 
 //Pull WAKE pin low to indicate we are ready to talk to the sensor
@@ -204,25 +234,25 @@ void setMode(byte mode)
 {
   //Begin test with unit in reset
   digitalWrite(RST, LOW);
-  
-  delay(10);
 
-  if(mode == 0) //I2C
+  delay(1);
+
+  if (mode == 0) //I2C
   {
     digitalWrite(PS0_WAKE, LOW);
     digitalWrite(PS1, LOW);
   }
-  else if(mode == 1) //UART-RVC
+  else if (mode == 1) //UART-RVC
   {
     digitalWrite(PS0_WAKE, HIGH);
     digitalWrite(PS1, LOW);
   }
-  else if(mode == 2) //UART
+  else if (mode == 2) //UART
   {
     digitalWrite(PS0_WAKE, LOW);
     digitalWrite(PS1, HIGH);
   }
-  else if(mode == 3) //SPI
+  else if (mode == 3) //SPI
   {
     digitalWrite(PS0_WAKE, HIGH);
     digitalWrite(PS1, HIGH);
@@ -231,6 +261,6 @@ void setMode(byte mode)
   //Then release reset
   digitalWrite(RST, HIGH);
 
-  delay(10);
+  delay(1);
 }
 
