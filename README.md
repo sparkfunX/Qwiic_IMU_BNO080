@@ -21,7 +21,7 @@ Repository Contents
 
 Library
 --------------
-* **[Arduino Library](https://github.com/sparkfun/SparkFun_SSD1320_OLED_Arduino_Library)** - Library for drawing, graphics, text, etc.
+* **[Arduino Library](https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library)** - Library for reading Quaternions, raw accel/gyro/mag, reading activity classifier, advanced configuration, etc.
 
 License Information
 -------------------
