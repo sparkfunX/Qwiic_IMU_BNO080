@@ -1,7 +1,7 @@
 SparkFun Qwiic VR IMU with the BNO080
 ========================================
 
-![SparkFun Inertial Measurement Unit - BNO080](https://cdn.sparkfun.com//assets/parts/1/2/7/3/3/2018-01-22_17_08_14.gif)
+![SparkFun Inertial Measurement Unit - BNO080](https://cdn.sparkfun.com//assets/parts/1/2/7/3/3/14586-VR_IMU__Qwiic__-_BNO080-01.jpg)
 
 [*SparkX IMU BNO080 (SPX-14586)*](https://www.sparkfun.com/products/14586)
 
