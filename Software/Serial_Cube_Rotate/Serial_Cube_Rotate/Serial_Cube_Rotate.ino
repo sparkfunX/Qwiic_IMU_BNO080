@@ -28,8 +28,6 @@ BNO080 myIMU;
 void setup()
 {
   Serial.begin(9600);
-  Serial.println();
-  Serial.println("BNO080 Read Example");
 
   Wire.begin();
   Wire.setClock(400000); //Increase I2C data rate to 400kHz
@@ -37,9 +35,6 @@ void setup()
   myIMU.begin();
 
   myIMU.enableRotationVector(50); //Send data update every 50ms
-
-  Serial.println(F("Rotation vector enabled"));
-  Serial.println(F("Output in form i, j, k, real, accuracy"));
 }
 
 void loop()
