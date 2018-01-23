@@ -1,9 +1,10 @@
 SparkFun Qwiic VR IMU with the BNO080
 ========================================
 
-![SparkFun Inertial Measurement Unit - BNO080](https://cdn.sparkfun.com//assets/parts/1/2/7/3/3/14586-VR_IMU__Qwiic__-_BNO080-01.jpg)
+![SparkFun Inertial Measurement Unit - BNO080](https://cdn.sparkfun.com//assets/parts/1/2/7/3/3/2018-01-22_17_08_14.gif)
 
 [*SparkX IMU BNO080 (SPX-14586)*](https://www.sparkfun.com/products/14586)
+
 
 The BNO080/BNO085 IMU has a combination triple axis accelerometer/gyro/magnetometer packaged with an ARM Cortex M0+ running powerful algorithms. This enables the BNO080 Inertial Measurement Unit (IMU) to produce accurate rotation vector headings with an error of 5 degrees or less. It's what we've been waiting for: all the sensor data is combined into meaningful, accurate IMU information.
 
@@ -17,7 +18,7 @@ Repository Contents
 * **/Documents** - Datasheets
 * **/Firmware** - Just the test routine for the testjig. Please see the [BNO080/BNO085 library](https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library) for a large number of examples.
 * **/Hardware** - Eagle design files (.brd, .sch)
-* **/Software** - Processing Example
+* **/Software** - Processing Example showing how to manipulate graphics using quaternions
 
 Library
 --------------
