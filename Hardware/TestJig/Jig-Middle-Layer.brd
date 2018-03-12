@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -56,7 +56,7 @@
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
@@ -274,6 +274,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="KevinKuwata_eagle">
+<packages>
+<package name="POGO_PIN_TIGHT">
+<pad name="P1" x="0" y="0" drill="1.45" diameter="2.1844"/>
+<text x="-1.27" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.27" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -470,6 +479,28 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="JP5" library="SparkFun" package="STAND-OFF" value="STAND-OFF" x="2.54" y="52.07"/>
 <element name="JP6" library="SparkFun" package="STAND-OFF" value="STAND-OFF" x="2.54" y="2.54"/>
 <element name="U$4" library="Pogo-Footprints" package="1X01_POGO_HEAD" value="POGO_HEAD_11" x="16.51" y="17.78"/>
+<element name="J1" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="21.59" y="34.29"/>
+<element name="J2" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="24.13" y="34.29"/>
+<element name="J3" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="26.67" y="34.29"/>
+<element name="J4" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="29.21" y="34.29"/>
+<element name="J5" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="31.75" y="34.29"/>
+<element name="J6" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="34.29" y="34.29"/>
+<element name="J7" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="36.83" y="34.29"/>
+<element name="J8" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="39.37" y="34.29"/>
+<element name="J9" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="24.13" y="29.21"/>
+<element name="J10" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="31.75" y="29.21"/>
+<element name="J11" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="26.67" y="29.21"/>
+<element name="J12" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="34.29" y="29.21"/>
+<element name="J13" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="29.21" y="29.21"/>
+<element name="J14" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="21.59" y="11.43"/>
+<element name="J15" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="36.83" y="29.21"/>
+<element name="J16" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="24.13" y="11.43"/>
+<element name="J17" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="26.67" y="11.43"/>
+<element name="J18" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="39.37" y="11.43"/>
+<element name="J19" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="29.21" y="11.43"/>
+<element name="J21" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="31.75" y="11.43"/>
+<element name="J23" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="34.29" y="11.43"/>
+<element name="J24" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="36.83" y="11.43"/>
 </elements>
 <signals>
 </signals>
