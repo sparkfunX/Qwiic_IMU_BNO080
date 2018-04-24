@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -314,83 +314,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
-<library name="Pogo-Footprints">
-<packages>
-<package name="1X01_POGO_HEAD">
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
-<text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-<pad name="1" x="0" y="0" drill="1.6002" diameter="1.778"/>
-</package>
-</packages>
-<symbols>
-<symbol name="POGO_HEAD_1">
-<wire x1="3.81" y1="-2.54" x2="-2.54" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.6096" layer="94"/>
-<wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="3.81" y1="-2.54" x2="3.81" y2="2.54" width="0.4064" layer="94"/>
-<wire x1="-2.54" y1="2.54" x2="3.81" y2="2.54" width="0.4064" layer="94"/>
-<text x="-2.54" y="-4.826" size="1.778" layer="96" font="vector">&gt;VALUE</text>
-<text x="-2.54" y="3.048" size="1.778" layer="95" font="vector">&gt;NAME</text>
-<text x="-1.27" y="-1.524" size="1.27" layer="94">Pogo
-Head</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="POGO_HEAD_1">
-<gates>
-<gate name="G$1" symbol="POGO_HEAD_1" x="0" y="0"/>
-</gates>
-<devices>
-<device name="1" package="1X01_POGO_HEAD">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="KevinKuwata_eagle">
-<packages>
-<package name="POGO_PIN_TIGHT">
-<pad name="P1" x="0" y="0" drill="1.45" diameter="2.1844"/>
-<text x="-1.27" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="POGO_PIN">
-<pin name="P1" x="-2.54" y="0" length="short"/>
-<text x="-2.54" y="2.54" size="1.27" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="1.27" layer="96">&gt;VALUE</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="POGO_PIN" prefix="J">
-<gates>
-<gate name="J1" symbol="POGO_PIN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="TIGHT" package="POGO_PIN_TIGHT">
-<connects>
-<connect gate="J1" pin="P1" pad="P1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -404,29 +327,6 @@ Head</text>
 <part name="JP3" library="SparkFun" deviceset="STAND-OFF" device=""/>
 <part name="JP4" library="SparkFun" deviceset="STAND-OFF" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
-<part name="U$4" library="Pogo-Footprints" deviceset="POGO_HEAD_1" device="1"/>
-<part name="J1" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J2" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J3" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J4" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J5" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J6" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J7" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J8" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J9" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J10" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J11" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J12" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J13" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J14" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J15" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J16" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J17" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J18" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J19" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J21" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J23" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
-<part name="J24" library="KevinKuwata_eagle" deviceset="POGO_PIN" device="TIGHT"/>
 </parts>
 <sheets>
 <sheet>
@@ -476,29 +376,6 @@ SPI</text>
 <instance part="JP4" gate="G$1" x="246.38" y="27.94"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="V" x="147.32" y="0"/>
-<instance part="U$4" gate="G$1" x="15.24" y="162.56"/>
-<instance part="J1" gate="J1" x="22.86" y="134.62"/>
-<instance part="J2" gate="J1" x="22.86" y="124.46"/>
-<instance part="J3" gate="J1" x="22.86" y="114.3"/>
-<instance part="J4" gate="J1" x="22.86" y="104.14"/>
-<instance part="J5" gate="J1" x="50.8" y="134.62"/>
-<instance part="J6" gate="J1" x="50.8" y="124.46"/>
-<instance part="J7" gate="J1" x="50.8" y="114.3"/>
-<instance part="J8" gate="J1" x="50.8" y="104.14"/>
-<instance part="J9" gate="J1" x="76.2" y="134.62"/>
-<instance part="J10" gate="J1" x="76.2" y="124.46"/>
-<instance part="J11" gate="J1" x="76.2" y="114.3"/>
-<instance part="J12" gate="J1" x="76.2" y="104.14"/>
-<instance part="J13" gate="J1" x="104.14" y="134.62"/>
-<instance part="J14" gate="J1" x="104.14" y="124.46"/>
-<instance part="J15" gate="J1" x="104.14" y="114.3"/>
-<instance part="J16" gate="J1" x="104.14" y="104.14"/>
-<instance part="J17" gate="J1" x="132.08" y="134.62"/>
-<instance part="J18" gate="J1" x="132.08" y="124.46"/>
-<instance part="J19" gate="J1" x="132.08" y="114.3"/>
-<instance part="J21" gate="J1" x="160.02" y="134.62"/>
-<instance part="J23" gate="J1" x="160.02" y="114.3"/>
-<instance part="J24" gate="J1" x="160.02" y="104.14"/>
 </instances>
 <busses>
 </busses>

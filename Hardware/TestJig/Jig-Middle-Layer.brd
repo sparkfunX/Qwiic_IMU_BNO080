@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -23,15 +23,15 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="16" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="14" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
@@ -52,13 +52,13 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
-<layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="6" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -198,22 +198,47 @@
 <wire x1="22.86" y1="30.48" x2="22.86" y2="27.94" width="0.1524" layer="22"/>
 <wire x1="22.86" y1="27.94" x2="38.1" y2="27.94" width="0.1524" layer="22"/>
 <wire x1="38.1" y1="27.94" x2="38.1" y2="30.48" width="0.1524" layer="22"/>
-<wire x1="0" y1="0" x2="62.23" y2="0" width="0.254" layer="20"/>
-<wire x1="62.23" y1="0" x2="62.23" y2="54.61" width="0.254" layer="20"/>
-<wire x1="62.23" y1="54.61" x2="0" y2="54.61" width="0.254" layer="20"/>
-<wire x1="0" y1="54.61" x2="0" y2="0" width="0.254" layer="20"/>
-<wire x1="22.225" y1="31.115" x2="38.735" y2="31.115" width="0.254" layer="20"/>
-<wire x1="38.735" y1="31.115" x2="38.735" y2="27.305" width="0.254" layer="20"/>
-<wire x1="38.735" y1="27.305" x2="22.225" y2="27.305" width="0.254" layer="20"/>
-<wire x1="22.225" y1="27.305" x2="22.225" y2="31.115" width="0.254" layer="20"/>
-<wire x1="19.685" y1="36.195" x2="41.275" y2="36.195" width="0.254" layer="20"/>
-<wire x1="41.275" y1="36.195" x2="41.275" y2="32.385" width="0.254" layer="20"/>
-<wire x1="41.275" y1="32.385" x2="19.685" y2="32.385" width="0.254" layer="20"/>
-<wire x1="19.685" y1="32.385" x2="19.685" y2="36.195" width="0.254" layer="20"/>
-<wire x1="19.685" y1="13.335" x2="41.275" y2="13.335" width="0.254" layer="20"/>
-<wire x1="41.275" y1="13.335" x2="41.275" y2="9.525" width="0.254" layer="20"/>
-<wire x1="41.275" y1="9.525" x2="19.685" y2="9.525" width="0.254" layer="20"/>
-<wire x1="19.685" y1="9.525" x2="19.685" y2="13.335" width="0.254" layer="20"/>
+<wire x1="-1.27" y1="52.07" x2="-1.27" y2="2.54" width="0.254" layer="20"/>
+<wire x1="-1.27" y1="2.54" x2="2.54" y2="-1.27" width="0.254" layer="20" curve="90"/>
+<wire x1="2.54" y1="-1.27" x2="59.69" y2="-1.27" width="0.254" layer="20"/>
+<wire x1="59.69" y1="-1.27" x2="63.5" y2="2.54" width="0.254" layer="20" curve="90"/>
+<wire x1="63.5" y1="2.54" x2="63.5" y2="5.08" width="0.254" layer="20"/>
+<wire x1="63.5" y1="5.08" x2="59.69" y2="7.62" width="0.254" layer="20" curve="90"/>
+<wire x1="59.69" y1="7.62" x2="54.392103125" y2="7.62" width="0.254" layer="20"/>
+<wire x1="54.392103125" y1="7.62" x2="52.59605" y2="8.36395" width="0.254" layer="20" curve="-45.00005"/>
+<wire x1="52.59605" y1="8.36395" x2="44.45" y2="16.51" width="0.254" layer="20"/>
+<wire x1="44.45" y1="16.51" x2="44.45" y2="27.94" width="0.254" layer="20"/>
+<wire x1="44.45" y1="27.94" x2="51.32605" y2="34.81605" width="0.254" layer="20"/>
+<wire x1="51.32605" y1="34.81605" x2="53.122103125" y2="35.56" width="0.254" layer="20" curve="-45.00007"/>
+<wire x1="53.122103125" y1="35.56" x2="59.69" y2="35.56" width="0.254" layer="20"/>
+<wire x1="59.69" y1="35.56" x2="63.5" y2="38.1" width="0.254" layer="20" curve="90"/>
+<wire x1="63.5" y1="38.1" x2="63.5" y2="52.07" width="0.254" layer="20"/>
+<wire x1="63.5" y1="52.07" x2="59.69" y2="55.88" width="0.254" layer="20" curve="90"/>
+<wire x1="59.69" y1="55.88" x2="2.54" y2="55.88" width="0.254" layer="20"/>
+<wire x1="2.54" y1="55.88" x2="-1.27" y2="52.07" width="0.254" layer="20" curve="90"/>
+<hole x="21.59" y="34.29" drill="1.397"/>
+<hole x="24.13" y="34.29" drill="1.397"/>
+<hole x="26.67" y="34.29" drill="1.397"/>
+<hole x="29.21" y="34.29" drill="1.397"/>
+<hole x="31.75" y="34.29" drill="1.397"/>
+<hole x="34.29" y="34.29" drill="1.397"/>
+<hole x="36.83" y="34.29" drill="1.397"/>
+<hole x="39.37" y="34.29" drill="1.397"/>
+<hole x="24.13" y="29.21" drill="1.397"/>
+<hole x="26.67" y="29.21" drill="1.397"/>
+<hole x="29.21" y="29.21" drill="1.397"/>
+<hole x="31.75" y="29.21" drill="1.397"/>
+<hole x="34.29" y="29.21" drill="1.397"/>
+<hole x="36.83" y="29.21" drill="1.397"/>
+<hole x="21.59" y="11.43" drill="1.397"/>
+<hole x="24.13" y="11.43" drill="1.397"/>
+<hole x="26.67" y="11.43" drill="1.397"/>
+<hole x="29.21" y="11.43" drill="1.397"/>
+<hole x="31.75" y="11.43" drill="1.397"/>
+<hole x="34.29" y="11.43" drill="1.397"/>
+<hole x="36.83" y="11.43" drill="1.397"/>
+<hole x="39.37" y="11.43" drill="1.397"/>
+<hole x="16.51" y="17.78" drill="1.397"/>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -254,32 +279,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-20.32" y="5.08" size="1.778" layer="51" font="vector">Released under the Creative Commons Attribution Share-Alike 4.0 License</text>
 <text x="0" y="2.54" size="1.778" layer="51" font="vector"> https://creativecommons.org/licenses/by-sa/4.0/</text>
 <text x="11.43" y="0" size="1.778" layer="51" font="vector">Designed by:</text>
-</package>
-</packages>
-</library>
-<library name="Pogo-Footprints">
-<packages>
-<package name="1X01_POGO_HEAD">
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
-<text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-<pad name="1" x="0" y="0" drill="1.6002" diameter="1.778"/>
-</package>
-</packages>
-</library>
-<library name="KevinKuwata_eagle">
-<packages>
-<package name="POGO_PIN_TIGHT">
-<pad name="P1" x="0" y="0" drill="1.45" diameter="2.1844"/>
-<text x="-1.27" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -478,29 +477,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="JP2" library="SparkFun" package="STAND-OFF" value="STAND-OFF" x="59.69" y="2.54"/>
 <element name="JP5" library="SparkFun" package="STAND-OFF" value="STAND-OFF" x="2.54" y="52.07"/>
 <element name="JP6" library="SparkFun" package="STAND-OFF" value="STAND-OFF" x="2.54" y="2.54"/>
-<element name="U$4" library="Pogo-Footprints" package="1X01_POGO_HEAD" value="POGO_HEAD_11" x="16.51" y="17.78"/>
-<element name="J1" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="21.59" y="34.29"/>
-<element name="J2" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="24.13" y="34.29"/>
-<element name="J3" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="26.67" y="34.29"/>
-<element name="J4" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="29.21" y="34.29"/>
-<element name="J5" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="31.75" y="34.29"/>
-<element name="J6" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="34.29" y="34.29"/>
-<element name="J7" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="36.83" y="34.29"/>
-<element name="J8" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="39.37" y="34.29"/>
-<element name="J9" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="24.13" y="29.21"/>
-<element name="J10" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="31.75" y="29.21"/>
-<element name="J11" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="26.67" y="29.21"/>
-<element name="J12" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="34.29" y="29.21"/>
-<element name="J13" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="29.21" y="29.21"/>
-<element name="J14" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="21.59" y="11.43"/>
-<element name="J15" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="36.83" y="29.21"/>
-<element name="J16" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="24.13" y="11.43"/>
-<element name="J17" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="26.67" y="11.43"/>
-<element name="J18" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="39.37" y="11.43"/>
-<element name="J19" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="29.21" y="11.43"/>
-<element name="J21" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="31.75" y="11.43"/>
-<element name="J23" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="34.29" y="11.43"/>
-<element name="J24" library="KevinKuwata_eagle" package="POGO_PIN_TIGHT" value="POGO_PINTIGHT" x="36.83" y="11.43"/>
 </elements>
 <signals>
 </signals>
